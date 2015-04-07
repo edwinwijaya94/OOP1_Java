@@ -32,7 +32,7 @@ public class ExpressionEvaluator
 		expression = input;
 	}	
 	
-	public static int calculate()
+	public static int evaluate()
 	{
 		int opFlag = 0; // 0 : previous String is an operand , 1 : previous character is an operator 
 		StringBuffer temp = new StringBuffer();
