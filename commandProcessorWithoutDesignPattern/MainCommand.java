@@ -1,4 +1,4 @@
-package CommandProcessor;
+package commandProcessorWithoutDesignPattern;
 import java.util.*;
 public class MainCommand {
 	public static void main (String args[]) {
