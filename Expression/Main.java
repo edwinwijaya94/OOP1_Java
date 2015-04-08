@@ -7,7 +7,7 @@ import java.util.*;
  * @author Edwin Wijaya
  * 
 */
-public class DriverExpressionCalculator{
+public class Main{
 	/**
 	 * receives an expression then calculate it and output the result
 	 * @param args unused, no explanation

@@ -6,7 +6,7 @@ import java.util.*;
  * commandProcessorWithoutDesignPattern package
  * @author Jessica Andjani
 */
-public class MainCommand {
+public class Main {
 	public static void main (String args[]) {
 		Scanner scan = new Scanner(System.in);
 		String ans;

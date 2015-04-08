@@ -6,7 +6,7 @@ import java.util.regex.*;
  * DemoCommandProcessor class simulates how to use all of the classes in the commandProcessorWithDesignPattern package
  * @author Elvan Owen
  */
-public class DemoCommandProcessor
+public class Main
 {
 	public static void main(String[] args)
 	{
