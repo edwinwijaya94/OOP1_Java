@@ -1,6 +1,8 @@
 package Expression;
 import java.util.Stack;
 
+/**
+*/
 public class ExpressionConverter {
 
 	static final int POSTFIKS_OPERATOR = 2;
@@ -30,6 +32,8 @@ public class ExpressionConverter {
 		if(in == '^') return true;
 		if(in == '>') return true;
 		if(in == '<') return true;
+		if(in == '{') return true;
+		if(in == '}') return true;
 		if(in == '=') return true;
 		return false;
 	}
@@ -60,7 +64,7 @@ public class ExpressionConverter {
 			case '!' : return 8;
 			case '*' : case '/' : case '%' : return 7;
 			case '+' : case '-' : return 6;
-			case '<' : case '>' : return 5;
+			case '<' : case '>' : case '{' : case '}' : return 5;
 			case '=' : return 4;
 			case '&' : return 3;
 			case '^' : return 2;
@@ -72,6 +76,12 @@ public class ExpressionConverter {
 	public String toPostfix(String expression) {
 		StringBuilder postfix = new StringBuilder();
 		expression = expression.trim();
+		expression = expression.replace("and", "&");
+		expression = expression.replace("xor", "^");
+		expression = expression.replace("or", "|");	
+		expression = expression.replace("not", "!");	
+		expression = expression.replace("<=", "{");
+		expression = expression.replace(">=", "}");		
 		setExpType(expression);
 		if (exp_type == POSTFIKS_OPERATOR)
 		{
