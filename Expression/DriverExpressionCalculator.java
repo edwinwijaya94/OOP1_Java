@@ -16,7 +16,7 @@ public class DriverExpressionCalculator{
 	 * @see ExpressionCalculator#calculate(Object) calculate
 	*/
 	public static void main (String[] args){
-		String expression = new Scanner(System.in).nextLine();		;
+		String expression = new Scanner(System.in).nextLine();
 		System.out.println(ExpressionCalculator.calculate(expression));
 	}
 }
