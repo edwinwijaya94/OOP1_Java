@@ -1,4 +1,4 @@
-package CommandProcessor;
+package commandProcessorWithoutDesignPattern;
 /* File Name : CommandReceiver.java */
 import java.util.*;
 
