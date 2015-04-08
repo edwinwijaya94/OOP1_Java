@@ -1,5 +1,11 @@
 package commandProcessorWithoutDesignPattern;
 import java.util.*;
+
+/**
+ * MainCommand is a driver to test the 
+ * commandProcessorWithoutDesignPattern package
+ * @author Jessica Andjani
+*/
 public class MainCommand {
 	public static void main (String args[]) {
 		Scanner scan = new Scanner(System.in);
