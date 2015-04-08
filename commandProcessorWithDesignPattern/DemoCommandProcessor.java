@@ -2,6 +2,10 @@ package commandProcessorWithDesignPattern;
 import java.util.*;
 import java.util.regex.*;
 
+/**
+ * DemoCommandProcessor class simulates how to use all of the classes in the commandProcessorWithDesignPattern package
+ * @author Elvan Owen
+ */
 public class DemoCommandProcessor
 {
 	public static void main(String[] args)

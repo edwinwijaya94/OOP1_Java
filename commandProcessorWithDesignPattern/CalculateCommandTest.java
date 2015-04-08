@@ -24,7 +24,7 @@ public class CalculateCommandTest {
 	@Parameterized.Parameters
 	public static Collection examples() {
 		return Arrays.asList(new Object[][] {
-		         { "(3*6)", "Hasil ekspresi, sebuah angka atau sebuah nilai boolean" },
+		         { "(3 * 6)", "Hasil ekspresi, sebuah angka atau sebuah nilai boolean" },
 		         { "+ 5 3", "Hasil ekspresi, sebuah angka atau sebuah nilai boolean" },
 		         { "3 6 *", "Hasil ekspresi, sebuah angka atau sebuah nilai boolean" },
 		         { "and true false", "Hasil ekspresi, sebuah angka atau sebuah nilai boolean" },

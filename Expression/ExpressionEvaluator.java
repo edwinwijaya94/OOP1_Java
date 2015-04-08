@@ -2,10 +2,19 @@ package Expression;
 
 import java.util.*;
 
+/**
+ * @author Elvan Owen and Edwin Wijaya
+ *
+ * The ExpressionEvaluator class calculates a given
+ * postfix expression and returns the result
+ */
 public class ExpressionEvaluator
-{
-	private static Stack<Integer> st;
-	
+{	
+	/**
+	 * Checks if a character is an operator
+	 * @param in  the character to be checked
+	 * @return Boolean
+	 */
 	private static Boolean isOperator(char in)
 	{
 		if (in == '+') return true;
@@ -24,15 +33,36 @@ public class ExpressionEvaluator
 		return false;
 	}
 	
-	
+	/**
+	 * Evaluate postfix-expression and returns the result in integer
+	 * @param expression  the expression in postfix to be evaluated
+	 * @return Integer
+	 */
 	public static int evaluate(String expression)
 	{
-		int opFlag = 0; // 0 : previous String is an operand , 1 : previous character is an operator 
+		/**
+		 * Flag to specify previous character
+		 * 0 : previous String is an operand
+		 * 1 : previous character is an operator 
+		 */
+		int opFlag = 0;
+		
+		/**
+		 * Stack used to calculate postfix expression by holding numbers from the expression
+		 * 0 : previous String is an operand
+		 * 1 : previous character is an operator 
+		 */
+		Stack<Integer> st = new Stack<Integer>();
+		
+		/**
+		 * String used to hold partial numbers while parsing and calculating the expression 
+		 */
 		StringBuffer temp = new StringBuffer();
+		
 		for (int i=0;i<expression.length();i++)
 		{
 			// if current character is an operator but not a minus in a negative number (ie. -2)
-			if (isOperator(expression.charAt(i)) && ((expression.charAt(i+1) == ' ') || (i+1 == expression.length())))
+			if (isOperator(expression.charAt(i)) && ((i+1 == expression.length()) || (expression.charAt(i+1) == ' ')))
 			{
 				opFlag = 1; // setting to 1 : previous character is an operator 
 				int a,b; // temporary variable to hold two operands 
