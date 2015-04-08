@@ -2,23 +2,44 @@ package Expression;
 import java.util.Stack;
 
 /**
-*/
+ * @author Vicko Novianto
+ *
+ * The ExpressionConverter class converts a given
+ * prefix/postfix/infix expression to postfix expression and returns the result
+ */
 public class ExpressionConverter {
 
+	/**
+	 * konstanta untuk operator postfiks
+	 */	
 	static final int POSTFIKS_OPERATOR = 2;
-	// konstanta untuk operator postfiks
+	/**
+	 * konstanta untuk operator infiks
+	 */	
 	static final int INFIKS_OPERATOR = 1;
-	// konstanta untuk operator infiks
+	/**
+	 * konstanta untuk operator prefiks
+	 */	
 	static final int PREFIKS_OPERATOR = 3;
-	// konstanta untuk operator prefiks
-	
+
+	/**
+	 * integer representing expression type(postfix/infix/prefix)
+	 */		
 	private int exp_type;
 	// variabel tipe mode
-	
+
+	/**
+	 * Class constructor.
+	 */	
 	public ExpressionConverter() {
 		
 	}
 	
+	/**
+	 * Checks if a character is an operator
+	 * @param in the character to be checked
+	 * @return boolean
+	 */
 	public boolean isOperator(char in)
 	{
 		if (in == '+') return true;
@@ -35,9 +56,14 @@ public class ExpressionConverter {
 		if(in == '{') return true;
 		if(in == '}') return true;
 		if(in == '=') return true;
+		if(in == '#') return true;
 		return false;
 	}
 
+	/**
+	 * Set exp_type attribute according to the type of input expression
+	 * @param in  infix/prefix/postfix expression
+	 */
 	void setExpType(String exp)
 	{
 		if (isOperator(exp.charAt(exp.length()-1))) exp_type = POSTFIKS_OPERATOR;
@@ -45,19 +71,33 @@ public class ExpressionConverter {
 		else exp_type = INFIKS_OPERATOR;
 	}
 
-
+	/**
+	 * Checks if a character is a left brace
+	 * @param in  the character to be checked
+	 * @return boolean
+	 */
 	boolean isLeftBrace(char in)
 	{
 		if (in == '(') return true;
 		else return false;
 	}
 
+	/**
+	 * Checks if a character is a right brace
+	 * @param in  the character to be checked
+	 * @return boolean
+	 */
 	boolean isRightBrace(char in)
 	{
 		if (in == ')') return true;
 		else return false;
 	}
 
+	/**
+	 * Returns the precedence of an operator
+	 * @param in  the character to be checked
+	 * @return integer
+	 */
 	public int OperatorPrecedence(char op) {
 		switch (op) 
 		{
@@ -65,7 +105,7 @@ public class ExpressionConverter {
 			case '*' : case '/' : case '%' : return 7;
 			case '+' : case '-' : return 6;
 			case '<' : case '>' : case '{' : case '}' : return 5;
-			case '=' : return 4;
+			case '=' : case '#' : return 4;
 			case '&' : return 3;
 			case '^' : return 2;
 			case '|' : return 1;
@@ -73,9 +113,19 @@ public class ExpressionConverter {
 		}
 	}
 
+	/**
+	 * Convert infix/prefix/postfix expression to postfix expression
+	 * @param in  the expression to be converted
+	 * @return string
+	 */
 	public String toPostfix(String expression) {
 		StringBuilder postfix = new StringBuilder();
 		expression = expression.trim();
+		expression = expression.replace("true", "1");
+		expression = expression.replace("div", "/");		
+		expression = expression.replace("false", "0");
+		expression = expression.replace("<>", "#");
+		expression = expression.replace("mod", "%");		
 		expression = expression.replace("and", "&");
 		expression = expression.replace("xor", "^");
 		expression = expression.replace("or", "|");	
