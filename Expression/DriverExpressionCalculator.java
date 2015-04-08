@@ -1,18 +1,16 @@
 package Expression;
 import java.util.*;
 /**
- * DriverExpressionCalculator adalah kelas yang 
- * berfungsi sebagai driver dari package expression,
- * menerima input ekspresi dari user.
+ * DriverExpressionCalculator acts as a driver for 
+ * package "expression"
  * 
  * @author Edwin Wijaya
  * 
 */
 public class DriverExpressionCalculator{
 	/**
-	 * method Main untuk menerima input ekspresi dan mencetak
-	 * ke layar.
-	 * @param -
+	 * receives an expression then calculate it and output the result
+	 * @param args unused, no explanation
 	 * @see ExpressionCalculator#calculate(Object) calculate
 	*/
 	public static void main (String[] args){
