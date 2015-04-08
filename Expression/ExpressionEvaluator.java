@@ -72,7 +72,13 @@ public class ExpressionEvaluator
 				// second operand
 				a = st.pop();
 				// first operand
-				b = st.pop();
+				if (expression.charAt(i) != '!')
+				{
+					b = st.pop();	
+				}else
+				{
+					b = 0;
+				}
 				
 				switch(expression.charAt(i)){
 					case '&': st.push( ((a!=0) && (b!=0)) ? 1 : 0 ); break;
