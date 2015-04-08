@@ -1,54 +1,65 @@
 package commandProcessorWithoutDesignPattern;
 /* File Name : CommandReceiver.java */
 import java.util.*;
-
+/**
+ * CommandReceiver receives user input command and execute the
+ * appropriate command
+ * @author Jessica Andjani 
+*/
 public class CommandReceiver {
+	
 	/** 
-	@param n adalah banyaknya perintah yang akan ditampilkan
-	@I.S. n merupakan masukan dari user
-	@F.S. mengeluarkan tulisan "Proses ShowMem n"
+	* I.S. n is user's input
+	* F.S. output "Proses ShowMem n"
+	* @param n define how many commands and expression will be shown
 	*/
 	public static void showMem(int n) {
 		System.out.println("Proses ShowMem " + n);
 	}
+	
 	/** 
-	@prosedur mengeluarkan tulisan "Proses ShowMem All"
+	* procedure to output "Proses ShowMem All"
 	*/
 	public static void showAll() {
 		System.out.println("Proses Show All");
 	}
+	
 	/** 
-	@prosedur mengeluarkan tulisan "Proses Save "
+	* procedure to output "Proses Save "
 	*/
 	public static void save() {
 		System.out.println("Proses Save");
 	}
+	
 	/** 
-	@param n adalah banyaknya perintah dari user
-	@I.S. n merupakan masukan dari user
-	@F.S. mengeluarkan tulisan "Proses Undo n"
+	* I.S. n is user's input
+	* F.S. output "Proses Undo n"
+	* @param n define how many undo command(s) will be done
 	*/
 	public static void undo (int n) {
 		System.out.println("Proses Undo " + n);
 	}
+	
 	/** 
-	@param n adalah banyaknya perintah dari user
-	@I.S. n merupakan masukan dari user
-	@F.S. mengeluarkan tulisan "Proses Redo n"
+	* I.S. n is user's input
+	* F.S. output "Proses Redo n"
+	*@param n define how many redo command(s) will be done
 	*/
 	public static void redo (int n) {
 		System.out.println("Proses Redo " + n);
 	}
+	
 	/** 
-	@prosedur mengeluarkan tulisan "Hasil ekspresi, sebuah angka atau sebuah nilai boolean"
+	* procedure to output "Hasil ekspresi, sebuah angka atau sebuah nilai boolean"
 	*/
 	public static void expression() {
 		System.out.println("Hasil ekspresi, sebuah angka atau sebuah nilai boolean");
 	}
+	
 	/** 
-	@param in adalah command masukan
-	@I.S. in merupakan masukan dari user
-	@F.S. menjalankan command yang dimasukan
+	* I.S. in is user's input
+	* F.S. run the  appropriate command
+	* @param in user's input command
 	*/
 	public static void execute(String in) {
 		int n;

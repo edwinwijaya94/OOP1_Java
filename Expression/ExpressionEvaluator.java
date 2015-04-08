@@ -29,6 +29,8 @@ public class ExpressionEvaluator
 		if (in == '>') return true;
 		if (in == '<') return true;
 		if (in == '=') return true;
+		if (in == '{') return true;
+		if (in == '}') return true;
 		// if not an operator
 		return false;
 	}
@@ -78,6 +80,8 @@ public class ExpressionEvaluator
 					case '^': st.push( ((a!=0) ^ (b!=0)) ? 1 : 0 ); break;
 					case '>': st.push( (b > a) ? 1 : 0 );break;
 					case '<': st.push( (b < a) ? 1 : 0 );break;
+					case '{': st.push( (b <= a) ? 1 : 0 );break;
+					case '}': st.push( (b >= a) ? 1 : 0 );break;
 					case '=': st.push( (a == b) ? 1 : 0 );break;
 					case '+': st.push(a + b); break;
 					case '-': st.push(b - a);break;
