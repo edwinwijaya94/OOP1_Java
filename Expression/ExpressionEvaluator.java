@@ -1,10 +1,9 @@
-package Expression
+package Expression;
 
 import java.util.*;
 
 public class ExpressionEvaluator
 {
-	private static String expression;
 	private static Stack<Integer> st;
 	
 	private static Boolean isOperator(char in)
@@ -25,14 +24,8 @@ public class ExpressionEvaluator
 		return false;
 	}
 	
-	public ExpressionEvaluator(){}
-
-	private static void setExpression(String input)
-	{
-		expression = input;
-	}	
 	
-	public static int calculate()
+	public static int evaluate(String expression)
 	{
 		int opFlag = 0; // 0 : previous String is an operand , 1 : previous character is an operator 
 		StringBuffer temp = new StringBuffer();
