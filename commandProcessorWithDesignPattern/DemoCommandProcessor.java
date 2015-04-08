@@ -1,6 +1,5 @@
-package commandProcessor;
+package commandProcessorWithDesignPattern;
 import java.util.*;
-import java.io.*;
 import java.util.regex.*;
 
 public class DemoCommandProcessor
@@ -9,7 +8,6 @@ public class DemoCommandProcessor
 	{
 		int n = 1; // set default
 		Calculator c = new Calculator();
-		CommandInvoker CalculateInvoker = new CommandInvoker(new CalculateCommand(c));
 		
 		// Get input from Console
 		Scanner sc = new Scanner(System.in);
@@ -17,13 +15,14 @@ public class DemoCommandProcessor
 		
 		// Check if input is an expression
 		String line = userinput;
-		String pattern = "[%+*-/><=()]|and|or|xor|div|mod|true|false";
+		String pattern = "[%+*-/><=()]|and|or|xor|div|mod|not|true|false";
 		Pattern r = Pattern.compile(pattern);
 		Matcher m = r.matcher(line);
 		
 		// If expression
 		if (m.find( ))
 		{
+			CommandInvoker CalculateInvoker = new CommandInvoker(new CalculateCommand(c, userinput));
 			CalculateInvoker.invoke();
 		}
 		else

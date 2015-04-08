@@ -1,4 +1,4 @@
-package commandProcessor;
+package commandProcessorWithDesignPattern;
 
 public class ShowMemCommand implements Command
 {

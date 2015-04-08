@@ -1,4 +1,4 @@
-package commandProcessor;
+package commandProcessorWithDesignPattern;
 
 public interface ICalculator
 {
@@ -7,5 +7,5 @@ public interface ICalculator
 	public Boolean showMem(int n);
 	public Boolean save();
 	public Boolean showAll();
-	public Boolean calculate();
+	public Boolean calculate(String expression);
 }

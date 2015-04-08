@@ -1,4 +1,4 @@
-package commandProcessor;
+package commandProcessorWithDesignPattern;
 
 public class Calculator implements ICalculator
 {
@@ -32,7 +32,7 @@ public class Calculator implements ICalculator
 		return true;
 	}
 	
-	public Boolean calculate()
+	public Boolean calculate(String expression)
 	{
 		System.out.println("Hasil ekspresi, sebuah angka atau sebuah nilai boolean");
 		return true;
