@@ -110,6 +110,7 @@ public class ExpressionConverter {
 		StringBuilder postfix = new StringBuilder();
 		expression = expression.trim();
 		expression = expression.replace("true", "1");
+		expression = expression.replace("div", "/");		
 		expression = expression.replace("false", "0");
 		expression = expression.replace("<>", "#");
 		expression = expression.replace("mod", "%");		
