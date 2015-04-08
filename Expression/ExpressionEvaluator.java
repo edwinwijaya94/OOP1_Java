@@ -42,6 +42,7 @@ public class ExpressionEvaluator
 	 */
 	public static int evaluate(String expression)
 	{
+		System.out.println("expression : " + expression);
 		/**
 		 * Flag to specify previous character
 		 * 0 : previous String is an operand
