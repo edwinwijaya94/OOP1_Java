@@ -310,7 +310,6 @@ public class ExpressionConverter {
 				mode = 2;
 			}
 		}
-		System.out.println("Return: " + postfix.toString());
 		return postfix.toString();
 	}
 }
