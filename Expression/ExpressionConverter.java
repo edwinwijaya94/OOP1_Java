@@ -9,16 +9,28 @@ import java.util.Stack;
  */
 public class ExpressionConverter {
 
+	/**
+	 * konstanta untuk operator postfiks
+	 */	
 	static final int POSTFIKS_OPERATOR = 2;
-	// konstanta untuk operator postfiks
+	/**
+	 * konstanta untuk operator infiks
+	 */	
 	static final int INFIKS_OPERATOR = 1;
-	// konstanta untuk operator infiks
+	/**
+	 * konstanta untuk operator prefiks
+	 */	
 	static final int PREFIKS_OPERATOR = 3;
-	// konstanta untuk operator prefiks
-	
+
+	/**
+	 * integer representing expression type(postfix/infix/prefix)
+	 */		
 	private int exp_type;
 	// variabel tipe mode
-	
+
+	/**
+	 * Class constructor.
+	 */	
 	public ExpressionConverter() {
 		
 	}
